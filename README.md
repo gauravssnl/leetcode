@@ -50,3 +50,26 @@ impl Solution {
 
 ```
 
+2. Contains Duplicate
+
+Solution1 (Rust):
+
+```rust
+
+use std::collections::HashMap;
+
+impl Solution {
+    pub fn contains_duplicate(nums: Vec<i32>) -> bool {
+        let mut element_count_map = HashMap::new();
+        for index in 0..nums.len() {
+            if let Some(&count) = element_count_map.get(&nums[index]) {
+                return true;
+            } else {
+                element_count_map.insert(nums[index], 1);
+            }
+        }
+        false
+    }
+}
+
+```
