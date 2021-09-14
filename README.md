@@ -28,3 +28,25 @@ impl Solution {
 }
 
 ```
+
+Solution2 (Rust):
+
+```rust
+
+use std::collections::HashMap;
+
+impl Solution {
+    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+        let mut diff_index_map:HashMap<i32, i32> = HashMap::new();
+        for index in 0..nums.len() {
+            match diff_index_map.get(&nums[index]) {
+                Some(&other_index) => { return vec![other_index as i32, index as i32]; },
+                None => { diff_index_map.insert(target - nums[index], index as i32); }
+            }
+        }
+        vec![-1, -1]
+    }
+}
+
+```
+
