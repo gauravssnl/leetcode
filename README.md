@@ -50,6 +50,7 @@ impl Solution {
 
 ```
 
+
 2. Contains Duplicate
 
 Solution1 (Rust):
