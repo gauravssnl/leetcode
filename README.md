@@ -4,7 +4,7 @@ LeetCode Solutions in Rust, Python, Java and other lanaguages.
 
 ## Easy Questions
 
-1. Two Sum
+1. [Two Sum](https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/546/)
 
 Solution1 (Rust):
 
@@ -51,7 +51,7 @@ impl Solution {
 ```
 
 
-2. Contains Duplicate
+2. [Contains Duplicate](https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/578/)
 
 Solution1 (Rust):
 
@@ -70,6 +70,25 @@ impl Solution {
             }
         }
         false
+    }
+}
+
+```
+
+3. [Rotate Array](https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/646/)
+
+Solution1 (Rust):
+
+```rust
+
+impl Solution {
+    pub fn rotate(nums: &mut Vec<i32>, k: i32) {
+        let mut result = vec![0; nums.len()];
+        for index in 0..nums.len() {
+            let result_index = (index as i32 + k) % nums.len() as i32;
+            result[result_index as usize] = nums[index];
+        }
+        *nums = result;
     }
 }
 
