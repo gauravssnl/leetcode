@@ -93,3 +93,21 @@ impl Solution {
 }
 
 ```
+
+Solution2 (Rust) : Time Limit Exceeded - 36/37 Test Cases Passed
+
+```rust
+
+impl Solution {
+    pub fn rotate(nums: &mut Vec<i32>, k: i32) {
+        for _ in 1..=k {
+            let last_element = nums[nums.len() - 1];
+            for i in (1..nums.len()).rev() {
+                nums[i] = nums[i - 1];
+            }
+            nums[0] = last_element;
+        }
+    }
+}
+
+```
